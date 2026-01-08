@@ -19,10 +19,10 @@ session_start();
 	<section>
 <!--*************** MENU ***************-->
 <nav class="navbar">
-	<li class="toggle">
-		<ul class ="toggle-item"><i class="fa fa-bars menu" aria-hidden="true"> </i></ul>
-	</li>
-   <ul class="nav-links">
+	<button class="toggle toggle-item" id="menuToggle" aria-controls="navLinks" aria-expanded="false" aria-label="Ouvrir le menu">
+		<i class="fa fa-bars" aria-hidden="true"></i>
+	</button>
+   <ul class="nav-links" id="navLinks">
       	<li class="nav-item"><a href="index.php">ACCUEIL</a></li>
       	<li class="nav-item"><a href="produits.php">LES PRODUITS</a></li>
 	  	<li class="nav-item"><a href="video.php">VIDEO</a></li>
@@ -42,91 +42,43 @@ session_start();
 	<img src="./images/scierie.gif" style="width:70px; margin:5px;">
 </nav>
 
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script type="text/javascript">
-
-	$(document).ready(function(){
-
-		$('.menu').click(function(){
-			$('.nav-links').toggleClass('active');
-		})
-	})
-
-</script> 
 <!--*************** END MENU ***************-->
 	</section>
-	
-	<div class="forms">
 
-		<ul class="onglets">
-		    <li class="onglet active"><a href="#login">Connexion</a></li>
-		    <li class="onglet"><a href="#sinscrire">Inscription</a></li>
-		</ul>
-
+	<main class="container" style="max-width:480px;margin:18px auto;">
 		<form action="controleur/traitementFormConnexion.php" method="GET" id="login">
 			<h1>Connexion</h1>
-            <span class="err">
+			<span class="err">
 				<?php
 					if (isset($_SESSION['errCnx'])) {
 						echo $_SESSION['errCnx'];
 						$_SESSION['errCnx'] = "";
 					}
-					
+                    
 					if (isset($_SESSION['creationOk'])) {
 						echo $_SESSION['creationOk'];
 						$_SESSION['creationOk'] = "";
 					}
-					
+                    
 					if (isset($_SESSION['creationNok'])) {
 						echo $_SESSION['creationNok'];
 						$_SESSION['creationNok'] = "";
 					}
-					
 				?>
-            </span>
+			</span>
 			<div class="input-field">
-
 				<label for="idUtil">Identifiant</label>
-				<input type="text" placeholder="Entrer le nom d'utilisateur" name="idUtil" id="idUtil" required>
+				<input type="text" placeholder="Entrer le nom d'utilisateur" name="idUtil" id="idUtil" required autocomplete="username">
 
-				<label for="mdpUtil">Mot de Passe</label> 
-				<input type="password" placeholder="Entrer le mot de passe" name="mdpUtil" id="mdpUtil" required>
+				<label for="mdpUtil">Mot de Passe</label>
+				<input type="password" placeholder="Entrer le mot de passe" name="mdpUtil" id="mdpUtil" required autocomplete="current-password">
 
-				<input type="submit" value="Se connecter" class="button">
-				
-
+				<div style="margin-top:12px;">
+					<input type="submit" value="Se connecter" class="button">
+				</div>
 			</div>
 		</form>
-
-		<form action="controleur/traitementFormInscription.php" id="sinscrire" method="GET">
-			<h1>S'inscrire</h1>
-			<span class="err">
-				<?php
-					if (isset($_SESSION['errMdp'])) {
-						echo $_SESSION['errMdp'];
-						$_SESSION['errMdp'] = "";
-					}
-					if (isset($_SESSION['errId'])) {
-						echo $_SESSION['errId'];
-						$_SESSION['errId'] = "";
-					}
-				?>
-            </span>
-			<div class="input-field">
-	            <label for="idUtilCreation">Identifiant</label> 
-	            <input type="text" placeholder="Choisir un nom d'utilisateur" name="idUtilCreation" id="idUtilCreation" required>
-
-	            <label for="pwdCreation">Mot de Passe</label> 
-	            <input type="password" placeholder="Choisir un mot de passe" name="pwdCreation" id="pwdCreation" required>
-
-	            <label for="pwdBis">Confirmez le Mot de Passe</label> 
-	            <input type="password" placeholder="Ressaisir le mot de passe" name="pwdBis" id="pwdBis" required>
-	            
-	            <input type="submit" value="S'inscrire" class="button" />
-			</div>
-	    </form>
-	</div>
+	</main>
 
 <!--*************** PIED DE PAGE ***************-->
 <footer id="footer">
@@ -138,20 +90,20 @@ session_start();
 </footer>
 <!--*************** PIED DE PAGE ***************-->
 
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script type="text/javascript">
-	$(document).ready(function(){
-	      $('.onglet a').on('click', function (e) {
-	      e.preventDefault();
-	       
-	      $(this).parent().addClass('active');
-	      $(this).parent().siblings().removeClass('active');
-	       
-	      var href = $(this).attr('href');
-	      $('.forms > form').hide();
-	      $(href).fadeIn(333);
-	    });
-	});
-</script>
+	(function($){
+		$(function(){
+			var $menuToggle = $('#menuToggle');
+			var $navLinks = $('#navLinks');
+			$menuToggle.on('click', function(){
+				var expanded = $(this).attr('aria-expanded') === 'true';
+				$(this).attr('aria-expanded', String(!expanded));
+				$navLinks.toggleClass('active');
+			});
+		});
+	})(jQuery);
+	</script>
 
 </body>
 
