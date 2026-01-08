@@ -38,7 +38,10 @@
 
 			$description .= "<li class='sub-item'><p class='texte'>".$descr_safe."</p></li>";
 
-			$description .= "<li class='sub-item'><img class='image' src='images/".htmlspecialchars($img_safe, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8')."'></li>";
+			$description .= "<li class='sub-item'><img class='image' 
+                                                       src='images/".htmlspecialchars($img_safe, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8')."' 
+                                                       alt='Illustration : ".$titre_safe."'>
+                                                       </li>";
 			
 			$description .= "</ul></li>";
 		
@@ -47,7 +50,10 @@
 				$description .= "<li class='main-item'><p class='texte'>".$descr_safe."</p></li>";
 			}
 			if($resultat['img']!='' && $img_ok){
-				$description .= "<li class='main-item'><img class='image' src='images/".htmlspecialchars($img_safe, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8')."'></li>";
+				$description .= "<li class='main-item'><img class='image' 
+                                 src='images/".htmlspecialchars($img_safe, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8')."' 
+                                 alt='Illustration : ".$titre_safe."'>
+                                </li>";
 			}
 		}
 		$description .="</ul>";

@@ -109,7 +109,6 @@ session_start();
             <li class="footer-item">Site test</li>
             <ul/>
     </footer>
-    <!--*************** PIED DE PAGE ***************-->
 
 </body>
 

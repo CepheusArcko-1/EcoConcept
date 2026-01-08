@@ -5,8 +5,9 @@ session_start();
 
 <html lang="fr">
 	<head>
-		<title>TRUC</title>
+		<title>Scierie - Contact</title>
 		<meta charset="UTF-8">
+		<meta name="description" content="Contactez la scierie : email, téléphone, adresse et réseaux sociaux. Toutes les informations pour nous joindre facilement.">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" href="style.css">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -38,7 +39,7 @@ session_start();
 ?>
     </ul>
 
-	<img src="./images/scierie.gif" style="width:70px; margin:5px;">
+	<img src="./images/logo.webp" alt="Logo de la scierie" style="width:70px; margin:5px;">
 </nav>
 
 
@@ -54,7 +55,7 @@ session_start();
 
 </script> 
 <!--*************** END MENU ***************-->
-
+<h1 class="page-title">Nous contacter</h1>
 		<div class="contactContainer">
 
 			<div class="rightContainer">
@@ -82,7 +83,7 @@ session_start();
 					<h2> NOUS SUIVRE </h2>
 
 					<ul class="logo">
-						<li class="facebook"><a href="https://www.facebook.com/Scierie-du-Fargal-613509152159633/" target="_blank"><img src="images/facebook.png"></a></li>
+						<li class="facebook"><a href="https://www.facebook.com/Scierie-du-Fargal-613509152159633/" target="_blank"><img src="images/facebook.webp" alt="Lien vers Facebook"></a></li>
 					</ul>
 				</div>
 
@@ -94,9 +95,9 @@ session_start();
 <footer id="footer">
 <ul class="footer-links">
     <li class="footer-item">©Projet 3iL</li>
-    <li class="footer-item"><a href="#" target="_blank"><img id="logo" src="images/facebook.png"></a></li>
+    <li class="footer-item"><a href="#" target="_blank"><img id="logo" src="images/facebook.webp" alt="Lien vers Facebook"></a></li>
     <li class="footer-item">Site test</li>
-<ul/>
+</ul>
 </footer>
 <!--*************** PIED DE PAGE ***************-->
 
