@@ -37,26 +37,31 @@ session_start();
 ?>
     </ul>
 
-	<img src="./images/scierie.gif" alt="Logo de la scierie" style="width:70px; margin:5px;">
+	<img src="./images/logo.webp" alt="Logo de la scierie" style="width:70px; margin:5px;">
 </nav>
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script type="text/javascript">
+
 	$(document).ready(function(){
+
 		$('.menu').click(function(){
-			$('.nav-links').toggleClass('active');
+			
+			$('ul').toggleClass('active');
 		})
 	})
 
 </script> 
 <!--*************** END MENU ***************-->
-		<div class="video-wrapper">
+		<div style="text-align: center;">
 			<iframe 
-				src="https://www.youtube.com/embed/dbHXPnhCicI?autoplay=1&mute=1" 
+				width="1000" 
+				height="562" 
+				src="https://www.youtube.com/embed/dbHXPnhCicI?autoplay=0&mute=1" 
 				title="YouTube video player" 
 				frameborder="0" 
-				allow="autoplay; accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+				allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
 				allowfullscreen>
 			</iframe>
 		</div>
@@ -65,7 +70,7 @@ session_start();
 <footer id="footer">
 <ul class="footer-links">
     <li class="footer-item">©Projet 3iL</li>
-    <li class="footer-item"><a href="#" target="_blank"><img id="logo" src="images/facebook.png" alt="Lien vers Facebook"></a></li>
+    <li class="footer-item"><a href="#" target="_blank"><img id="logo" src="images/facebook.webp" alt="logo facebook"></a></li>
     <li class="footer-item">Site test</li>
 </ul>
 </footer>
