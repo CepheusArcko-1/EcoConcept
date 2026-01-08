@@ -2,20 +2,19 @@
 session_start();
 ?>
 <!DOCTYPE html>
-
 <html lang="fr">
-	<head>
-		<title>Scierie - Video</title>
-		<meta charset="UTF-8">
-		<meta name="description" content="Découvrez notre vidéo de présentation de la scierie et de nos activités.">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="stylesheet" href="style.css">
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
-	</head>
+<head>
+	<title>Scierie - Video</title>
+	<meta charset="UTF-8">
+	<meta name="description" content="Découvrez notre vidéo de présentation de la scierie et de nos activités.">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+</head>
 
-	<body>
-	<!--*************** MENU ***************-->
+<body>
+<!--*************** MENU ***************-->
 <nav class="navbar">
 	<li class="toggle">
 		<ul class ="toggle-item"><i class="fa fa-bars menu" aria-hidden="true"> </i></ul>
@@ -37,45 +36,48 @@ session_start();
 ?>
     </ul>
 
-	<img src="./images/logo.webp" alt="Logo de la scierie" style="width:70px; margin:5px;">
+	<img src="./images/logo.webp" alt="Logo de la scierie" style="width:70px; margin:5px;" loading="lazy">
 </nav>
-
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script type="text/javascript">
-
 	$(document).ready(function(){
-
 		$('.menu').click(function(){
-			
-			$('ul').toggleClass('active');
+			$('.nav-links').toggleClass('active');
 		})
 	})
-
 </script> 
 <!--*************** END MENU ***************-->
-		<div style="text-align: center;">
-			<iframe 
-				width="1000" 
-				height="562" 
-				src="https://www.youtube.com/embed/dbHXPnhCicI?autoplay=0&mute=1" 
-				title="YouTube video player" 
-				frameborder="0" 
-				allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-				allowfullscreen>
-			</iframe>
-		</div>
 
-		<!--*************** PIED DE PAGE ***************-->
-<footer id="footer">
-<ul class="footer-links">
-    <li class="footer-item">©Projet 3iL</li>
-    <li class="footer-item"><a href="#" target="_blank"><img id="logo" src="images/facebook.webp" alt="logo facebook"></a></li>
-    <li class="footer-item">Site test</li>
-</ul>
+<!--*************** CONTENU PRINCIPAL ***************-->
+<main style="flex:1; display:flex; justify-content:center; align-items:center; padding:10px;">
+    <div class="video-container" style="text-align:center; width:100%; max-width:1000px;">
+        <iframe 
+            width="100%" 
+            height="562" 
+            src="https://www.youtube.com/embed/dbHXPnhCicI?autoplay=0&mute=1" 
+            title="YouTube video player" 
+            frameborder="0" 
+            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen 
+            loading="lazy">
+        </iframe>
+    </div>
+</main>
+
+<!--*************** PIED DE PAGE ***************-->
+<footer id="footer" style="flex-shrink:0;">
+    <ul class="footer-links">
+        <li class="footer-item">©Projet 3iL</li>
+        <li class="footer-item">
+            <a href="#" target="_blank">
+                <img id="logo" src="images/facebook.webp" alt="logo facebook" loading="lazy">
+            </a>
+        </li>
+        <li class="footer-item">Site test</li>
+    </ul>
 </footer>
 <!--*************** PIED DE PAGE ***************-->
 
-	</body>
-
+</body>
 </html>
