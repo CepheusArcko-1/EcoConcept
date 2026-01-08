@@ -5,7 +5,7 @@ session_start();
 
 <html lang="fr">
 <head>
-	<title>TRUC</title>
+	<title>Scierie - Produits</title>
 	<meta charset="UTF-8">
 	<meta name="description" content="Découvrez les produits de la scierie : bois massif, parquets, lambris et matériaux de qualité pour vos projets.">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">

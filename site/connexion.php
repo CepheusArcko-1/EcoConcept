@@ -6,7 +6,7 @@ session_start();
 <html lang="fr">
 
 <head>
-	<title>TEST GREEN IT</title>
+	<title>Scierie - Connexion</title>
 		<meta charset="UTF-8">
 		<meta name="description" content="Page de connexion et d'inscription à l'espace utilisateur de la scierie. Connectez-vous ou créez un compte.">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">

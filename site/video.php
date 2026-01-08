@@ -5,7 +5,7 @@ session_start();
 
 <html lang="fr">
 	<head>
-		<title>TRUC</title>
+		<title>Scierie - Video</title>
 		<meta charset="UTF-8">
 		<meta name="description" content="Découvrez notre vidéo de présentation de la scierie et de nos activités.">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">

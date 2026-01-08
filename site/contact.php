@@ -5,7 +5,7 @@ session_start();
 
 <html lang="fr">
 	<head>
-		<title>TRUC</title>
+		<title>Scierie - Contact</title>
 		<meta charset="UTF-8">
 		<meta name="description" content="Contactez la scierie : email, téléphone, adresse et réseaux sociaux. Toutes les informations pour nous joindre facilement.">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">

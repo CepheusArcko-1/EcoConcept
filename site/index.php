@@ -7,7 +7,7 @@ session_start();
 <html lang="fr">
 
 <head>
-<title>TEST GREEN IT</title>
+<title>Scierie - Accueil</title>
 	<meta name="description" content="Scierie EcoConcept : bois de qualité pour parquets, lambris et aménagement intérieur. Découvrez nos essences de bois et nos produits.">
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
