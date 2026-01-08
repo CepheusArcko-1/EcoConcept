@@ -38,7 +38,7 @@ session_start();
 ?>
     </ul>
 
-	<img src="./images/scierie.gif" style="width:70px; margin:5px;">
+	<img src="./images/logo.gif" style="width:70px; margin:5px;">
 </nav>
 
 
