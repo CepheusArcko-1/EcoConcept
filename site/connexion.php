@@ -87,7 +87,7 @@ session_start();
     <li class="footer-item">©Projet 3iL</li>
     <li class="footer-item"><a href="#" target="_blank"><img id="logo" src="images/facebook.png" alt="Lien vers Facebook"></a></li>
     <li class="footer-item">Site test</li>
-<ul/>
+</ul>
 </footer>
 <!--*************** PIED DE PAGE ***************-->
 
