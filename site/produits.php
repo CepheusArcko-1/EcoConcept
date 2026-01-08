@@ -37,7 +37,7 @@ session_start();
 ?>
     </ul>
 
-	<img src="./images/scierie.gif" alt="Logo de la scierie">
+	<img src="./images/logo.webp" alt="Logo de la scierie">
 </nav>
 
 
@@ -63,7 +63,7 @@ session_start();
     <li class="footer-item">©Projet 3iL</li>
     <li class="footer-item">
     <a href="#" target="_blank">
-        <img id="logo" src="images/facebook.png" alt="Lien vers la page Facebook">
+        <img id="logo" src="images/facebook.webp" alt="Lien vers la page Facebook">
     </a>
 </li>
     <li class="footer-item">Site test</li>
