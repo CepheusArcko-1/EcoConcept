@@ -23,8 +23,11 @@ class userDao {
     public function get($userId) {
         $sql = "SELECT *
                 FROM user
-                WHERE userId = '$userId'";
-        $result = $this->_db->query($sql);
+                WHERE userId = ?";
+        $stmt = $this->_db->prepare($sql);
+        $stmt->bind_param("s", $userId);
+        $stmt->execute();
+        $result = $stmt->get_result();
         if ($donnees = $result->fetch_assoc()) {  
             return new user($donnees);
         }
@@ -36,9 +39,12 @@ class userDao {
     public function userExist($userId, $userPwd) {
         $sql = "SELECT userId
                 FROM user
-                WHERE userId = '$userId'
-                AND userPwd = '$userPwd'";
-        $result = $this->_db->query($sql);
+                WHERE userId = ?
+                AND userPwd = ?";
+        $stmt = $this->_db->prepare($sql);
+        $stmt->bind_param("ss", $userId, $userPwd);
+        $stmt->execute();
+        $result = $stmt->get_result();
         return ($result && $result->num_rows > 0);
     }
     
@@ -48,8 +54,11 @@ class userDao {
     public function idExist($userId) {
         $sql = "SELECT userId
                 FROM user
-                WHERE userId = '$userId'";
-        $result = $this->_db->query($sql);
+                WHERE userId = ?";
+        $stmt = $this->_db->prepare($sql);
+        $stmt->bind_param("s", $userId);
+        $stmt->execute();
+        $result = $stmt->get_result();
         return ($result && $result->num_rows > 0);
     }
     
@@ -72,16 +81,23 @@ class userDao {
      */
     public function add($user) {
         $sql = "INSERT INTO user(userId, userPwd)
-                VALUES ('".$user->getUserId()."', '".$user->getUserPwd()."')";
-        return $this->_db->query($sql);
+                VALUES (?, ?)";
+        $stmt = $this->_db->prepare($sql);
+        $userId = $user->getUserId();
+        $userPwd = $user->getUserPwd();
+        $stmt->bind_param("ss", $userId, $userPwd);
+        return $stmt->execute();
     }
 
     /**
      * Supprime un utilisateur — vulnérable
      */
     public function delete($user) {
-        $sql = "DELETE FROM user WHERE userId = '".$user->getUserId()."'";
-        return $this->_db->query($sql);
+        $sql = "DELETE FROM user WHERE userId = ?";
+        $stmt = $this->_db->prepare($sql);
+        $userId = $user->getUserId();
+        $stmt->bind_param("s", $userId);
+        return $stmt->execute();
     }
     
     /**
@@ -89,8 +105,12 @@ class userDao {
      */
     public function update($userUpdate) {
         $sql = "UPDATE user 
-                SET userPwd = '".$userUpdate->getUserPwd()."'
-                WHERE userId = '".$userUpdate->getUserId()."'";
-        return $this->_db->query($sql);
+                SET userPwd = ?
+                WHERE userId = ?";
+        $stmt = $this->_db->prepare($sql);
+        $userPwd = $userUpdate->getUserPwd();
+        $userId = $userUpdate->getUserId();
+        $stmt->bind_param("ss", $userPwd, $userId);
+        return $stmt->execute();
     }
 }
