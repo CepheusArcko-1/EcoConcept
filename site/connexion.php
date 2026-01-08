@@ -143,17 +143,7 @@ session_start();
 
 		</form>
 	</div>
-
-<section>
-<?php 
-	include "includes/slider.php";
-?>
-</section>
-
-<main>
-<?php
-	include "controleur/initIndex.php";
-?>
+	
 </main>
 
 <!--*************** PIED DE PAGE ***************-->
