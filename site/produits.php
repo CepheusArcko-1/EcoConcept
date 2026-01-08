@@ -37,7 +37,7 @@ session_start();
 ?>
     </ul>
 
-	<img src="./images/logo.webp" alt="Logo de la scierie">
+	<img src="./images/logo.webp" alt="Logo de la scierie" style="width:70px; margin:5px;">
 </nav>
 
 
