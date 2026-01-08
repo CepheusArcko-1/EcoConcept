@@ -37,40 +37,38 @@ session_start();
 ?>
     </ul>
 
-	<img src="./images/logo.webp" alt="Logo de la scierie" style="width:70px; margin:5px;">
+	<img src="./images/logo.webp" alt="Logo de la scierie" style="width:70px; margin:5px;" loading="lazy">
 </nav>
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script type="text/javascript">
-
 	$(document).ready(function(){
-
 		$('.menu').click(function(){
 			$('.nav-links').toggleClass('active');
 		})
 	})
-
 </script> 
 <!--*************** END MENU ***************-->
 	
-	<main id="container">
-	</main>
+<main id="container">
+</main>
 	
 <!--*************** PIED DE PAGE ***************-->
 <footer id="footer">
 <ul class="footer-links">
     <li class="footer-item">©Projet 3iL</li>
     <li class="footer-item">
-    <a href="#" target="_blank">
-        <img id="logo" src="images/facebook.webp" alt="Lien vers la page Facebook">
-    </a>
-</li>
+        <a href="#" target="_blank">
+            <img id="logo" src="images/facebook.webp" alt="Lien vers la page Facebook" loading="lazy">
+        </a>
+    </li>
     <li class="footer-item">Site test</li>
 </ul>
 </footer>
 <!--*************** PIED DE PAGE ***************-->
-	<script src="scripts/initListeProduits.js"></script>
+
+<script src="scripts/initListeProduits.js"></script>
 </body>
 
 </html>
