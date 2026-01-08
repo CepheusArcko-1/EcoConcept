@@ -1,4 +1,3 @@
-
 $(document).ready(function(){
 
     //  récupération des images du fichier xml
@@ -68,7 +67,20 @@ function recupXmlSlider(xml){
 
     $(xml).find("slide").each(function(){
 
-        $('#slider').append('<div class="slide"><img src="' + $(this).find("image").text() +  '"/><p class="texteDescriptif">' + $(this).find("description").text() + '</p></div>');
+        var img = $(this).find("image").text();
+        var desc = $(this).find("description").text();
+
+        var imgOk = /^[a-zA-Z0-9._\-\/]+\.(jpg|jpeg|png|gif|webp|svg)$/i.test(img);
+
+        var $slide = $('<div>').addClass('slide');
+
+        if (imgOk) {
+            $('<img>', { src: img, alt: '' }).appendTo($slide);
+        }
+
+        $('<p>').addClass('texteDescriptif').text(desc).appendTo($slide);
+
+        $('#slider').append($slide);
     });
 
     var slideIndex, slides, points, texteDescriptif;

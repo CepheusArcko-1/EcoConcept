@@ -19,8 +19,9 @@ class userDao {
 	 */
     public function userExist($userId, $userPwd) {
 
-		$req = "SELECT userId FROM user WHERE userId = '$userId' and userPwd = '$userPwd'";
-		$stmt = $this->_db->query($req);
+		$req = "SELECT userId FROM user WHERE userId = ? and userPwd = ?";
+		$stmt = $this->_db->prepare($req);
+		$stmt->execute([$userId, $userPwd]);
 
 		if ($donnees = $stmt->fetch()) {  
 		    return true;
@@ -33,8 +34,9 @@ class userDao {
 	 * Recherche de l'existance d'un id
 	 */
     public function idExist($userId) {
-		$req = "SELECT userId FROM user WHERE userId = '$userId'";
-		$stmt = $this->_db->query($req);
+		$req = "SELECT userId FROM user WHERE userId = ?";
+		$stmt = $this->_db->prepare($req);
+		$stmt->execute([$userId]);
 
 		if ($donnees = $stmt->fetch()) {  
 		    return true;
