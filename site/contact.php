@@ -38,7 +38,7 @@ session_start();
 ?>
     </ul>
 
-	<img src="./images/scierie.gif" alt="Logo de la scierie">
+	<img src="./images/logo.webp" alt="Logo de la scierie" style="width:70px; margin:5px;">
 </nav>
 
 
@@ -82,7 +82,7 @@ session_start();
 					<h2> NOUS SUIVRE </h2>
 
 					<ul class="logo">
-						<li class="facebook"><a href="https://www.facebook.com/Scierie-du-Fargal-613509152159633/" target="_blank"><img src="images/facebook.png" alt="Lien vers Facebook"></a></li>
+						<li class="facebook"><a href="https://www.facebook.com/Scierie-du-Fargal-613509152159633/" target="_blank"><img src="images/facebook.webp" alt="Lien vers Facebook"></a></li>
 					</ul>
 				</div>
 
