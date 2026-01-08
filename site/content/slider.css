@@ -98,7 +98,7 @@
 	position: absolute;
 	bottom: 0;
 	z-index: 1;		/* ordre de pile: 1er plan */
-	color: white;
+	color: white !important;
 	font-family: sans-serif;
 	font-size: 20px;
 	text-align : center;
