@@ -33,6 +33,7 @@ session_start();
 		echo "<li class='nav-item'><a href='deconnexion.php'>DECONNEXION</a></li>";
 	}else{
 		echo "<li class='nav-item'><a href='connexion.php'>CONNEXION</a></li>";
+		echo "<li class='nav-item'><a href='inscription.php'>INSCRIPTION</a></li>";
 	}
 ?>
     </ul>

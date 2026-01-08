@@ -57,6 +57,7 @@ if (!isset($_SESSION['id']) || empty($_SESSION['id']) || $_SESSION['id'] !== 'Ad
 
                 <li class="nav-item">
                     <a class="nav-link" href="connexion.php">Connexion</a>
+					<a href='inscription.php'>INSCRIPTION</a></li>"
                 </li>
 
             <?php endif; ?>
