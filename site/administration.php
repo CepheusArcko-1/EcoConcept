@@ -37,12 +37,13 @@ if ((!(isset($_SESSION['id'])) || empty($_SESSION['id'])) && $_SESSION['role'] !
             <li class="nav-item"><a class="nav-link" href="video.php">Vidéo</a></li>
             <li class="nav-item"><a class="nav-link" href="contact.php">Contact</a></li>
 
-            <?php if (isset($_SESSION['id'])): ?>
-                <li class="nav-item"><a class="nav-link" href="administration.php">Administration</a></li>
-                <li class="nav-item"><a class="nav-link" href="deconnexion.php">Déconnexion</a></li>
-            <?php else: ?>
-                <li class="nav-item"><a class="nav-link" href="connexion.php">Connexion</a></li>
-            <?php endif; ?>
+			<?php if (isset($_SESSION['id'])): ?>
+				<li class="nav-item"><a class="nav-link" href="administration.php">Administration</a></li>
+				<li class="nav-item"><a class="nav-link" href="deconnexion.php">Déconnexion</a></li>
+			<?php else: ?>
+				<li class="nav-item"><a class="nav-link" href="connexion.php">Connexion</a></li>
+				<li class="nav-item"><a class="nav-link" href="inscription.php">Inscription</a></li>
+			<?php endif; ?>
         </ul>
     </div>
 </nav>
