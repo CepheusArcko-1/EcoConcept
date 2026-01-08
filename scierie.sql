@@ -39,8 +39,8 @@ CREATE TABLE `home` (
 --
 
 INSERT INTO `home` (`id`, `titre`, `descr`, `img`) VALUES
-(2, 'Vous recherchez la meilleure essence de bois pour vos parquets ou lambris ?', 'La SCIERIE DU FARGAL vous donne toutes les solutions et vous fournit votre matériel. C\'est une entreprise familiale comptant plus de 40 ans d\'expérience dans la fourniture, la transformation et la livraison de bois pour les professionnels comme les particuliers. L\'EURL GINESTE Laurent de MONTBAZENS (12) met tout son savoir-faire et son expertise à votre disposition. Profitez-en !', 'img2.jpg'),
-(3, 'Votre expert en bois dans l\'Aveyron', 'Nous avons le sens du service et nous sommes à votre écoute en vous indiquant le meilleur choix suivant votre utilisation pour concrétiser vos projets. Quelle que soit votre demande ou vos besoins, les Ets GINESTE Laurent, vous assurent un accueil chaleureux et très professionnel pour répondre à toutes vos sollicitations et attentes.', 'img4.jpg');
+(2, 'Vous recherchez la meilleure essence de bois pour vos parquets ou lambris ?', 'La SCIERIE DU FARGAL vous donne toutes les solutions et vous fournit votre matériel. C\'est une entreprise familiale comptant plus de 40 ans d\'expérience dans la fourniture, la transformation et la livraison de bois pour les professionnels comme les particuliers. L\'EURL GINESTE Laurent de MONTBAZENS (12) met tout son savoir-faire et son expertise à votre disposition. Profitez-en !', 'tasaprescoupe.webp'),
+(3, 'Votre expert en bois dans l\'Aveyron', 'Nous avons le sens du service et nous sommes à votre écoute en vous indiquant le meilleur choix suivant votre utilisation pour concrétiser vos projets. Quelle que soit votre demande ou vos besoins, les Ets GINESTE Laurent, vous assurent un accueil chaleureux et très professionnel pour répondre à toutes vos sollicitations et attentes.', 'tasdevantscierie.webp');
 
 -- --------------------------------------------------------
 
@@ -60,9 +60,9 @@ CREATE TABLE `produits` (
 --
 
 INSERT INTO `produits` (`id`, `titre`, `descr`, `img`) VALUES
-(1, 'Le séchoir à bois', 'Le séchage naturel du bois est  nécessaire pour une bonne utilisation du bois, qu\'il soit destiné au chauffage, à la charpente, à la menuiserie ou à l\'ébénisterie. C\'est un avantage majeur pour la commercialisation des produits.', 'sechoir.jpeg'),
-(2, 'Les poutres', 'Grosse pièce de bois servant de support pour la charpente', 'poutre.jpg'),
-(3, 'Les lambourdes', 'Poutrelle indispensable au support du parquet', 'lambourde.jpg');
+(1, 'Le séchoir à bois', 'Le séchage naturel du bois est  nécessaire pour une bonne utilisation du bois, qu\'il soit destiné au chauffage, à la charpente, à la menuiserie ou à l\'ébénisterie. C\'est un avantage majeur pour la commercialisation des produits.', 'sechoir.webp'),
+(2, 'Les poutres', 'Grosse pièce de bois servant de support pour la charpente', 'poutre.webp'),
+(3, 'Les lambourdes', 'Poutrelle indispensable au support du parquet', 'lambourde.webp');
 
 -- --------------------------------------------------------
 
