@@ -4,16 +4,18 @@ require("../metier/DB_connector.php");
 require("../metier/User.php");
 require("../Dao/UserDao.php");
 
-if (isset($_GET['idUtilCreation']) || isset($_GET['pwdCreation']) || isset($_GET['pwdBis'])) {
+if (isset($_POST['idUtilCreation']) && isset($_POST['pwdCreation']) && isset($_POST['pwdBis'])) 
+ {
 
     $cnx = new DB_Connector();
     $jeton = $cnx->openConnexion();
 
     $userManager = new UserDao($jeton);
 
-	$id = trim($_GET['idUtilCreation']);
-	$pwd = trim($_GET['pwdCreation']);
-	$pwdBis = trim($_GET['pwdBis']);
+	$id = trim($_POST['idUtilCreation']);
+    $pwd = trim($_POST['pwdCreation']);
+    $pwdBis = trim($_POST['pwdBis']);
+
     
 	if (($userManager->idExist($id))) {
 		 $_SESSION['errId'] = "Cette identifiant est déjà utilisé";	
@@ -26,9 +28,10 @@ if (isset($_GET['idUtilCreation']) || isset($_GET['pwdCreation']) || isset($_GET
 			header('Location:../connexion.php');
 			
 		} else {
+			$pwdHash = bcrypt($pwd);
 			$newUser = new User([
 				'userId' => $id,
-				'userPwd' => $pwd
+				'userPwd' => $pwdHash
 			]);
 		
 			if ($userManager->add($newUser)) {

@@ -47,7 +47,7 @@ session_start();
 	</section>
 
 	<main class="container" style="max-width:480px;margin:18px auto;">
-		<form action="controleur/traitementFormConnexion.php" method="GET" id="login">
+		<form action="controleur/traitementFormConnexion.php" method="POST" id="login">
 			<h1>Connexion</h1>
 			<span class="err">
 				<?php
