@@ -6,7 +6,7 @@ session_start();
 <html lang="fr">
 
 <head>
-    <title>Inscription - TEST GREEN IT</title>
+    <title>Scierie - Inscription</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
@@ -40,7 +40,7 @@ session_start();
                 ?>
             </ul>
 
-            <img src="./images/scierie.gif" style="width:70px; margin:5px;">
+            <img src="./images/logo.webp" style="width:70px; margin:5px;">
         </nav>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -60,52 +60,130 @@ session_start();
         <!--*************** END MENU ***************-->
     </section>
 
-    <main class="container" style="max-width:480px;margin:18px auto;">
-        <form action="controleur/traitementFormInscription.php" method="GET" id="inscription">
-            <h1>Inscription</h1>
-            <span class="err">
-                <?php
+<main class="container" style="max-width:520px;margin:24px auto; padding:0 12px;">
+
+    <div style="
+        border:1px solid rgba(0,0,0,.12);
+        border-radius:12px;
+        padding:18px;
+        background:#fff;
+    ">
+        <h1 style="font-size:2rem; line-height:1.2; margin:0 0 14px 0;">Inscription</h1>
+
+        <span class="err" role="status" aria-live="polite" style="display:block; margin-bottom:12px;">
+            <?php
                 if (isset($_SESSION['errMdp'])) {
-                    echo $_SESSION['errMdp'];
+                    echo htmlspecialchars($_SESSION['errMdp'], ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8');
                     $_SESSION['errMdp'] = "";
                 }
                 if (isset($_SESSION['errId'])) {
-                    echo $_SESSION['errId'];
+                    echo htmlspecialchars($_SESSION['errId'], ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8');
                     $_SESSION['errId'] = "";
                 }
                 if (isset($_SESSION['creationOk'])) {
-                    echo $_SESSION['creationOk'];
+                    echo htmlspecialchars($_SESSION['creationOk'], ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8');
                     $_SESSION['creationOk'] = "";
                 }
                 if (isset($_SESSION['creationNok'])) {
-                    echo $_SESSION['creationNok'];
+                    echo htmlspecialchars($_SESSION['creationNok'], ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8');
                     $_SESSION['creationNok'] = "";
                 }
-                ?>
-            </span>
-            <div class="input-field">
-                <label for="idUtilCreation">Identifiant</label>
-                <input type="text" placeholder="Choisir un nom d'utilisateur" name="idUtilCreation" id="idUtilCreation" required autocomplete="username">
+            ?>
+        </span>
 
-                <label for="pwdCreation">Mot de Passe</label>
-                <input type="password" placeholder="Choisir un mot de passe" name="pwdCreation" id="pwdCreation" required autocomplete="new-password">
+        <form action="controleur/traitementFormInscription.php" method="POST" id="inscription" style="margin:0;">
 
-                <label for="pwdBis">Confirmez le Mot de Passe</label>
-                <input type="password" placeholder="Ressaisir le mot de passe" name="pwdBis" id="pwdBis" required autocomplete="new-password">
+            <div style="display:grid; gap:10px;">
+                <div>
+                    <label for="idUtilCreation" style="display:block; font-weight:600; margin-bottom:6px;">Identifiant</label>
+                    <input
+                        type="text"
+                        placeholder="Choisir un nom d'utilisateur"
+                        name="idUtilCreation"
+                        id="idUtilCreation"
+                        required
+                        autocomplete="username"
+                        maxlength="120"
+                        style="
+                            width:100%;
+                            padding:10px 12px;
+                            border:1px solid rgba(0,0,0,.2);
+                            border-radius:10px;
+                            outline:none;
+                        "
+                    >
+                </div>
 
-                <div style="margin-top:12px;">
-                    <input type="submit" value="S'inscrire" class="button" />
+                <div>
+                    <label for="pwdCreation" style="display:block; font-weight:600; margin-bottom:6px;">Mot de passe</label>
+                    <input
+                        type="password"
+                        placeholder="Choisir un mot de passe"
+                        name="pwdCreation"
+                        id="pwdCreation"
+                        required
+                        autocomplete="new-password"
+                        maxlength="120"
+                        style="
+                            width:100%;
+                            padding:10px 12px;
+                            border:1px solid rgba(0,0,0,.2);
+                            border-radius:10px;
+                            outline:none;
+                        "
+                    >
+                </div>
+
+                <div>
+                    <label for="pwdBis" style="display:block; font-weight:600; margin-bottom:6px;">Confirmez le mot de passe</label>
+                    <input
+                        type="password"
+                        placeholder="Ressaisir le mot de passe"
+                        name="pwdBis"
+                        id="pwdBis"
+                        required
+                        autocomplete="new-password"
+                        maxlength="120"
+                        style="
+                            width:100%;
+                            padding:10px 12px;
+                            border:1px solid rgba(0,0,0,.2);
+                            border-radius:10px;
+                            outline:none;
+                        "
+                    >
+                </div>
+
+                <div style="display:flex; align-items:center; justify-content:space-between; gap:10px; margin-top:6px;">
+                    <button
+                        type="submit"
+                        class="button"
+                        style="
+                            padding:10px 14px;
+                            border-radius:10px;
+                            border:1px solid rgba(0,0,0,.15);
+                            cursor:pointer;
+                        "
+                    >
+                        S'inscrire
+                    </button>
+
+                    <a href="connexion.php" style="text-decoration:none;">
+                        Déjà inscrit ?
+                    </a>
                 </div>
             </div>
+
         </form>
-        <p style="text-align:center;margin-top:12px;">Déjà inscrit ? <a href="connexion.php">Se connecter</a></p>
-    </main>
+    </div>
+
+</main>
 
     <!--*************** PIED DE PAGE ***************-->
     <footer id="footer">
         <ul class="footer-links">
             <li class="footer-item">©Projet 3iL</li>
-            <li class="footer-item"><a href="#" target="_blank"><img id="logo" src="images/facebook.png"></a></li>
+            <li class="footer-item"><a href="#" target="_blank"><img id="logo" src="images/facebook.webp"></a></li>
             <li class="footer-item">Site test</li>
             <ul/>
     </footer>
