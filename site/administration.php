@@ -1,8 +1,8 @@
 ﻿<?php
-session_start();
-
-if ((!(isset($_SESSION['id'])) || empty($_SESSION['id'])) && $_SESSION['role'] != "admin") {
-	header("Location:connexion.php");
+session_start();#Empecher l'accès à la page "admiinistration.php" si l'utilisateur n'est pas connecté (revoir comment un admin seulement pourra acceder a la page)
+if (!isset($_SESSION['id']) || empty($_SESSION['id'])) {
+    header("Location: connexion.php");
+    exit;
 }
 ?>
 <!DOCTYPE html>

@@ -7,6 +7,7 @@ session_start();
 	<head>
 		<title>TRUC</title>
 		<meta charset="UTF-8">
+		<meta name="description" content="Découvrez notre vidéo de présentation de la scierie et de nos activités.">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" href="style.css">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -36,7 +37,7 @@ session_start();
 ?>
     </ul>
 
-	<img src="./images/scierie.gif" style="width:70px; margin:5px;">
+	<img src="./images/scierie.gif" alt="Logo de la scierie" style="width:70px; margin:5px;">
 </nav>
 
 
@@ -64,9 +65,9 @@ session_start();
 <footer id="footer">
 <ul class="footer-links">
     <li class="footer-item">©Projet 3iL</li>
-    <li class="footer-item"><a href="#" target="_blank"><img id="logo" src="images/facebook.png"></a></li>
+    <li class="footer-item"><a href="#" target="_blank"><img id="logo" src="images/facebook.png" alt="Lien vers Facebook"></a></li>
     <li class="footer-item">Site test</li>
-<ul/>
+</ul>
 </footer>
 <!--*************** PIED DE PAGE ***************-->
 

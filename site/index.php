@@ -7,7 +7,8 @@ session_start();
 <html lang="fr">
 
 <head>
-	<title>TEST GREEN IT</title>
+<title>TEST GREEN IT</title>
+	<meta name="description" content="Scierie EcoConcept : bois de qualité pour parquets, lambris et aménagement intérieur. Découvrez nos essences de bois et nos produits.">
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="style.css">
@@ -38,7 +39,7 @@ session_start();
 ?>
     </ul>
 
-	<img src="./images/scierie.gif" style="width:70px; margin:5px;">
+	<img src="./images/scierie.gif" alt="Logo de la scierie" style="width:70px; margin:5px;">
 </nav>
 
 
@@ -66,9 +67,9 @@ session_start();
 <footer id="footer">
 <ul class="footer-links">
     <li class="footer-item">©Projet 3iL</li>
-    <li class="footer-item"><a href="#" target="_blank"><img id="logo" src="images/facebook.png"></a></li>
+    <li class="footer-item"><a href="#" target="_blank">><img id="logo" src="images/facebook.png" alt="Lien vers Facebook"></a></li>
     <li class="footer-item">Site test</li>
-<ul/>
+</ul>
 </footer>
 <!--*************** PIED DE PAGE ***************-->
 	<script type="text/javascript" src="scripts/slider.js"></script>

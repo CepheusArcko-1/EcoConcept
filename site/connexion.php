@@ -8,6 +8,7 @@ session_start();
 <head>
 	<title>TEST GREEN IT</title>
 		<meta charset="UTF-8">
+		<meta name="description" content="Page de connexion et d'inscription à l'espace utilisateur de la scierie. Connectez-vous ou créez un compte.">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="style.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -39,7 +40,7 @@ session_start();
 ?>
     </ul>
 
-	<img src="./images/scierie.gif" style="width:70px; margin:5px;">
+	<img src="./images/scierie.gif" alt="Logo de la scierie" style="width:70px; margin:5px;">
 </nav>
 
 
@@ -64,7 +65,7 @@ session_start();
 		    <li class="onglet"><a href="#sinscrire">Inscription</a></li>
 		</ul>
 
-		<form action="controleur/traitementFormConnexion.php" method="GET" id="login">
+		<form action="controleur/traitementFormConnexion.php" method="POST" id="login">
 			<h1>Connexion</h1>
             <span class="err">
 				<?php
@@ -132,7 +133,7 @@ session_start();
 <footer id="footer">
 <ul class="footer-links">
     <li class="footer-item">©Projet 3iL</li>
-    <li class="footer-item"><a href="#" target="_blank"><img id="logo" src="images/facebook.png"></a></li>
+    <li class="footer-item"><a href="#" target="_blank"><img id="logo" src="images/facebook.png" alt="Lien vers Facebook"></a></li>
     <li class="footer-item">Site test</li>
 <ul/>
 </footer>
