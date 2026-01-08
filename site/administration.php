@@ -30,13 +30,9 @@ if (!isset($_SESSION['id']) || empty($_SESSION['id']) || $_SESSION['id'] !== 'Ad
 
 <!--*************** MENU ***************-->
 <nav class="navbar navbar-expand-md navbar-light bg-light" aria-label="Menu principal">
-    <a class="navbar-brand" href="index.php" aria-label="Retour à l'accueil">
-        <img src="./images/logo.webp" alt="Logo EcoConcept" width="50" height="50" loading="lazy" decoding="async">
+    <a class="navbar-brand" href="index.php">
+        <img src="./images/logo.webp" alt="Logo EcoConcept" width="50" height="50">
     </a>
-
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Ouvrir le menu">
-        <span class="navbar-toggler-icon" aria-hidden="true"></span>
-    </button>
 
     <div class="collapse navbar-collapse" id="mainNav">
         <ul class="navbar-nav ml-auto">
@@ -45,15 +41,29 @@ if (!isset($_SESSION['id']) || empty($_SESSION['id']) || $_SESSION['id'] !== 'Ad
             <li class="nav-item"><a class="nav-link" href="video.php">Vidéo</a></li>
             <li class="nav-item"><a class="nav-link" href="contact.php">Contact</a></li>
 
-            <?php if (isset($_SESSION['id']) || $_SESSION['id'] !== 'Admin'): ?>
-                <li class="nav-item"><a class="nav-link" href="administration.php" aria-current="page">Administration</a></li>
-                <li class="nav-item"><a class="nav-link" href="deconnexion.php">Déconnexion</a></li>
+            <?php if (isset($_SESSION['id'])): ?>
+
+                <?php if ($_SESSION['id'] === 'Admin'): ?>
+                    <li class="nav-item">
+                        <a class="nav-link" href="administration.php">Administration</a>
+                    </li>
+                <?php endif; ?>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="deconnexion.php">Déconnexion</a>
+                </li>
+
             <?php else: ?>
-                <li class="nav-item"><a class="nav-link" href="connexion.php">Connexion</a></li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="connexion.php">Connexion</a>
+                </li>
+
             <?php endif; ?>
         </ul>
     </div>
 </nav>
+
 <!--*************** END MENU ***************-->
 
 <main id="contenu" class="container-fluid" tabindex="-1">
