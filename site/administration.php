@@ -11,7 +11,8 @@ if ((!(isset($_SESSION['id'])) || empty($_SESSION['id'])) && $_SESSION['role'] !
 <head>
 	<title>TEST GREEN IT</title>
 
-	<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="style.css">
 	<link rel="stylesheet" href="content/administration.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -20,43 +21,41 @@ if ((!(isset($_SESSION['id'])) || empty($_SESSION['id'])) && $_SESSION['role'] !
 
 <body>
 <!--*************** MENU ***************-->
-<nav class="navbar">
-	<li class="toggle">
-		<ul class ="toggle-item"><i class="fa fa-bars menu" aria-hidden="true"> </i></ul>
-	</li>
-   <ul class="nav-links">
-      	<li class="nav-item"><a href="index.php">ACCUEIL</a></li>
-      	<li class="nav-item"><a href="produits.php">LES PRODUITS</a></li>
-	  	<li class="nav-item"><a href="video.php">VIDEO</a></li>
-		<li class="nav-item"><a href="contact.php">NOUS CONTACTER</a></li>
-<?php 
-	if (isset($_SESSION['id'])) {	
-		echo "<li class='nav-item'><a href='administration.php'>ADMINISTRATION</a></li>";
-	}
-	if(isset($_SESSION['id'])) {
-		echo "<li class='nav-item'><a href='deconnexion.php'>DECONNEXION</a></li>";
-	}else{
-		echo "<li class='nav-item'><a href='connexion.php'>CONNEXION</a></li>";
-	}
-?>
-    </ul>
+<nav class="navbar navbar-expand-md navbar-light bg-light">
+    <a class="navbar-brand" href="#">
+        <img src="./images/scierie.gif" alt="Logo" width="50">
+    </a>
 
-	<img src="./images/scierie.gif" style="width:70px; margin:5px;">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNav">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item"><a class="nav-link" href="index.php">Accueil</a></li>
+            <li class="nav-item"><a class="nav-link" href="produits.php">Produits</a></li>
+            <li class="nav-item"><a class="nav-link" href="video.php">Vidéo</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.php">Contact</a></li>
+
+            <?php if (isset($_SESSION['id'])): ?>
+                <li class="nav-item"><a class="nav-link" href="administration.php">Administration</a></li>
+                <li class="nav-item"><a class="nav-link" href="deconnexion.php">Déconnexion</a></li>
+            <?php else: ?>
+                <li class="nav-item"><a class="nav-link" href="connexion.php">Connexion</a></li>
+            <?php endif; ?>
+        </ul>
+    </div>
 </nav>
-
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script type="text/javascript">
-
 	$(document).ready(function(){
 
 		$('.menu').click(function(){
-			
-			$('ul').toggleClass('active');
+			$('#mainNav .navbar-nav').toggleClass('active');
 		})
 	})
-
-</script> 
+</script>
 <!--*************** END MENU ***************-->
 	<!-- Ajout d'un produit -->
 	<div class="row">
@@ -193,12 +192,14 @@ if ((!(isset($_SESSION['id'])) || empty($_SESSION['id'])) && $_SESSION['role'] !
 		    </form>
 	</div>
 <!--*************** PIED DE PAGE ***************-->
-<footer id="footer">
-<ul class="footer-links">
-    <li class="footer-item">©Projet 3iL</li>
-    <li class="footer-item"><a href="#" target="_blank"><img id="logo" src="images/facebook.png"></a></li>
-    <li class="footer-item">Site test</li>
-<ul/>
+<footer class="bg-light py-3 mt-5">
+    <ul class="d-flex justify-content-center align-items-center list-unstyled mb-0">
+        <li class="mx-3">© Projet 3iL</li>
+        <li class="mx-3">
+            <a href="#"><img src="images/facebook.png" alt="Facebook" width="24"></a>
+        </li>
+        <li class="mx-3">Site test</li>
+    </ul>
 </footer>
 <!--*************** PIED DE PAGE ***************-->
 	
